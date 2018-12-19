@@ -1,0 +1,70 @@
+.navbar {
+    margin-bottom: 0;
+    background-color: #f4511e;
+    z-index: 9999;
+    border: 0;
+    font-size: 16px !important;
+    line-height: 1.42857143 !important;
+    /* letter-spacing: 4px; */
+    border-radius: 0;
+    /* color:#fff; */
+    }
+
+.navbar li a, .navbar .navbar-brand {
+    /* color: #fff !important; */
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+
+/* navbar-end */   
+ .jumbotron { 
+        background-color: #f4511e; /* Orange */
+        color: hsl(0, 0%, 100%);
+    
+
+}
+.jumbotron h2 strong{
+    color:white;
+}
+
+.jumbotron p{
+    color:white;
+}
+
+/* about us */
+.container-fluid {
+    padding: 60px 50px;
+}
+
+.logo {
+    font-size: 200px;
+    color:#f4511e;
+}
+
+@media screen and(max-width:768px) {
+    .col-sm-4 {
+        margin: 25px 0;
+    }
+
+}
+
+.ourValues {
+    background-color: rgba(128, 128, 128, 0.062);
+}
+
+
+
+
+/* services */
+.services .glyphicon{
+    font-size:30px;
+    color:#f4511e;
+}
