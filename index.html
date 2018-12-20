@@ -11,12 +11,57 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/js" src="index.css"></script>
+    <script>
+        // smooth scrolling
+        $(document).ready(function () {
+
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+
+
+                if (this.hash !== "") {
+
+
+                    event.preventDefault();
+
+
+                    var hash = this.hash;
+
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        })
+
+
+        $(window).scroll(function () {
+            $(".slideanim").each(function () {
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+
+
+
+    </script>
 
 
 </head>
+<style>
+</style>
 
 <body>
-    <nav class="navbar navbar-default fixed-top">
+    <nav class="navbar navbar-default fixed-top" id="myPage">
         <div class="container">
             <div class="navbar-header">
                 <button class="navbar-toggle" type="button" data-target="#myNavbar" data-toggle="collapse">
@@ -76,7 +121,7 @@
         <div class="container-fluid about">
             <div class="row">
                 <div class="col-sm-8">
-                    <h2>About Us</h2>
+                    <h2 id="about">About Us</h2>
                     <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                         ex ea commodo consequat.</h4>
@@ -89,7 +134,7 @@
                     <button class="btn btn-default btn-lg">Get in Touch</button>
                 </div>
                 <div class="col-sm-4">
-                    <span class="glyphicon glyphicon-signal logo"></span>
+                    <span class="glyphicon glyphicon-signal logo slideanim"></span>
 
 
                 </div>
@@ -102,7 +147,7 @@
         <div class="container-fluid ourValues">
             <div class="row">
                 <div class="col-sm-4">
-                    <span class="glyphicon glyphicon-globe logo"></span>
+                    <span class="glyphicon glyphicon-globe logo slideanim"></span>
                 </div>
                 <div class="col-sm-8">
                     <h2>Our Values</h2>
@@ -121,10 +166,10 @@
         </div>
         <!-- services -->
         <div class="container-fluid text-center services">
-            <h2>Services</h2>
+            <h2 id="services">Services</h2>
             <h4>what we offer..</h4>
             <br>
-            <div class="row">
+            <div class="row slideanim">
                 <div class="col-sm-4">
                     <span class="glyphicon glyphicon-off"></span>
                     <h4>powerOff</h4>
@@ -141,6 +186,8 @@
                     <h4>Job Done</h4>
                     <p>Loreum Ipsum dolar sit amet.....</p>
                 </div>
+            </div>
+            <div class="row slideanim">
                 <div class="col-sm-4">
                     <span class="glyphicon glyphicon-leaf"></span>
                     <h4>Job Done</h4>
@@ -162,6 +209,242 @@
             </div>
         </div>
         </div>
+        </div>
+
+
+        <!--portfolio  -->
+        <div class="conatiner-fluid  portfolio text-centered bg-grey">
+            <center>
+                <h2 id="portfolio">portfolio</h2>
+                <h4>what we have created</h4>
+            </center>
+
+            <div class="container">
+                <div class="row text-center slideanim">
+                    <div class="col-sm-4">
+                        <div class="thumbnail">
+                            <img src="../imgs/b4.jpeg" height="200px;" width="200px;">
+                            <h2>loreum Ipsum</h2>
+                            <p>loreum ipsum....</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="thumbnail">
+                            <img src="../imgs/b2.jpeg" height="200px;" width="200px;">
+                            <h2>loreum Ipsum</h2>
+                            <p>loreum ipsum....</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="thumbnail">
+                            <img src="../imgs/b3.jpeg" height="200px;" width="200px;">
+                            <h2>loreum Ipsum</h2>
+                            <p>loreum ipsum....</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+        <!--carousel  -->
+        <h2>
+            <center> What our Customers say</center>
+        </h2>
+        <div id="#MyCarousel" class="carousel slide text-center" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#MyCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#MyCarousel" data-slide-to="1"></li>
+                <li data-target="#MyCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <h4>"This company is the best. I am so happy with the result!"
+                        <br>
+                        <span style="font-style:normal;">Michael Roe, Vice President, Comment Box</span>
+                    </h4>
+                </div>
+                <div class="item">
+                    <h4>"One word... WOW!!"
+                        <br>
+                        <span style="font-style:normal;">John Doe, Salesman, Rep Inc</span>
+                    </h4>
+                </div>
+                <div class="item">
+                    <h4>"Could I... BE any more happy with this company?"
+                        <br>
+                        <span style="font-style:normal;">Chandler Bing, Actor, FriendsAlot</span>
+                    </h4>
+                </div>
+
+
+            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="background-image:none;">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="background-image:none;">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+        </div>
+
+        <!-- pricing  -->
+        <div class="conatiner-fluid">
+            <div class="text-center">
+                <div class="container">
+                    <h2 id="pricing">Pricing</h2>
+                    <h4>Choose a payment plan that works for you </h4>
+                </div>
+                <div class="row slideanim">
+                    <div class="col-sm-4">
+                        <div class="panel panel-default text-center">
+                            <div class="panel-heading">
+                                <h1>Basic</h1>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    <strong>20</strong>Loreum</p>
+                                <p>
+                                    <strong>15</strong>Ipsum</p>
+                                <p>
+                                    <strong>5</strong>Dolor</p>
+                                <p>
+                                    <strong>2</strong>sit</p>
+                                <p>
+                                    <strong>Endless</strong>Ammet</p>
+                            </div>
+                            <div class="panel-footer">
+                                <h3>$19</h3>
+                                <h4>per month</h4>
+                                <button class="btn btn-lg">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-4">
+                        <div class="panel panel-default text-center">
+                            <div class="panel-heading">
+                                <h1>Pro</h1>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    <strong>50</strong>loreum</p>
+                                <p>
+                                    <strong>25</strong>ipsum</p>
+                                <p>
+                                    <strong>20</strong>dollor</p>
+                                <p>
+                                    <strong>10</strong>sit</p>
+                                <p>
+                                    <strong>Endless</strong>ammet</p>
+                            </div>
+                            <div class="panel-footer">
+                                <h3>$29</h3>
+                                <h4>per month</h4>
+                                <button class="btn btn-lg">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="panel panel-default text-center">
+                            <div class="panel-heading">
+                                <h1>Premium</h1>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    <strong>100</strong>loreum</p>
+                                <p>
+                                    <strong>50</strong>ipsum</p>
+                                <p>
+                                    <strong>25</strong>dollor</p>
+                                <p>
+                                    <strong>10</strong>sit</p>
+                                <p>
+                                    <strong>Endless</strong> ammet</p>
+                            </div>
+                            <div class="panel-footer">
+                                <h3>$49</h3>
+                                <h4>per month</h4>
+                                <button class="btn btn-lg">Sign Up</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- contact -->
+        <div class="conatiner-fluid bg-grey jumbotron">
+            <div class="container">
+                <h2 class="text-center" id="contact">CONTACT</h2>
+                <div class="row">
+                    <div class="col-md-5">
+                        <p style="color:balck;">contact us we will get back to you within 24 hours.</p>
+                        <br>
+                        <span class="glyphicon glyphicon-map-marker"> mumbai, maharashtra</span>
+                        <br>
+                        <span class="glyphicon glyphicon-phone"> 723454334</span>
+                        <br>
+                        <span class="glyphicon glyphicon-envelope"> abcd@gmail.com</span>
+                        <br>
+
+                    </div>
+                    <div class="col-md-7 slideanim">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <input class="form-control" type="text" placeholder="name" id="name" name="name" required>
+                            </div>
+                            <div class="col-sm-6">
+                                <input class="form-control" type="email" placeholder="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <br>
+                        <textarea class="form-control" name="comments" id="comments" cols="30" rows="5"></textarea>
+                        <br>
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <button class="btn btn-default pull-right" type="button">send</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+
+        <!-- footer -->
+        <footer>
+            <div class="container-fluid text-center">
+                <a href="#myPage" title="to top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                </a>
+                <p>loreum ipsum</p>
+
+
+
+            </div>
+        </footer>
+
+
 
 
 </body>
